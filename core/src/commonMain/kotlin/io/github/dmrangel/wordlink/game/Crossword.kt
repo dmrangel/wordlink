@@ -1,5 +1,6 @@
 package io.github.dmrangel.wordlink.game
 
+import kotlin.jvm.JvmInline
 import kotlin.random.Random
 
 /** A grid position packed into one Int so cell sets stay cheap. */

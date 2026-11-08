@@ -62,16 +62,26 @@ import kotlin.math.roundToInt
 
 private enum class Picker { Accent, ThemeBase }
 
+private enum class BackupNote { Copied, Restored }
+
 @Composable
 fun SettingsScreen(vm: AppViewModel) {
     val colors = Mr.colors
     val settings = vm.settings
     val custom = settings.custom
     var picker by remember { mutableStateOf<Picker?>(null) }
+    var restoring by remember { mutableStateOf(false) }
+    var backupNote by remember { mutableStateOf<BackupNote?>(null) }
     val photo = rememberLauncherForActivityResult(ActivityResultContracts.PickVisualMedia()) { uri ->
         if (uri != null) vm.setBackground(uri)
     }
-    BackHandler { if (picker != null) picker = null else vm.navigate(Screen.Home) }
+    BackHandler {
+        when {
+            restoring -> restoring = false
+            picker != null -> picker = null
+            else -> vm.navigate(Screen.Home)
+        }
+    }
 
     AppFrame(
         topBar = {
@@ -298,6 +308,38 @@ fun SettingsScreen(vm: AppViewModel) {
                     }
                 }
 
+                SectionTitle(stringResource(R.string.backup))
+                MrCard(Modifier.fillMaxWidth()) {
+                    val context = LocalContext.current
+                    Txt(stringResource(R.string.backup_desc), style = MrType.small, color = colors.secondary)
+                    Row(Modifier.padding(top = MrSize.gapMd), horizontalArrangement = Arrangement.spacedBy(MrSize.gapSm)) {
+                        MrButton(
+                            onClick = {
+                                copyText(context, vm.backupCode())
+                                backupNote = BackupNote.Copied
+                            },
+                            modifier = Modifier.weight(1f),
+                        ) {
+                            MrIcon(if (backupNote == BackupNote.Copied) Lucide.Check else Lucide.Copy, size = 18.dp)
+                            ButtonLabel(stringResource(if (backupNote == BackupNote.Copied) R.string.code_copied else R.string.copy_code))
+                        }
+                        MrButton({ restoring = true }, Modifier.weight(1f)) {
+                            MrIcon(Lucide.ClipboardPaste, size = 18.dp)
+                            ButtonLabel(stringResource(R.string.restore))
+                        }
+                    }
+                    if (backupNote == BackupNote.Restored) {
+                        Row(
+                            Modifier.padding(top = MrSize.gapMd),
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.spacedBy(MrSize.gapSm),
+                        ) {
+                            MrIcon(Lucide.Check, tint = colors.brand, size = 18.dp)
+                            Txt(stringResource(R.string.restored), style = MrType.label, color = colors.brand)
+                        }
+                    }
+                }
+
                 SectionTitle(stringResource(R.string.about))
                 MrCard(Modifier.fillMaxWidth()) {
                     val context = LocalContext.current
@@ -346,6 +388,20 @@ fun SettingsScreen(vm: AppViewModel) {
                     null -> Unit
                 }
             }
+        }
+
+        ModalLayer(restoring, onDismiss = { restoring = false }) {
+            RestoreCard(
+                onRestore = { code ->
+                    vm.restore(code).also { ok ->
+                        if (ok) {
+                            restoring = false
+                            backupNote = BackupNote.Restored
+                        }
+                    }
+                },
+                onCancel = { restoring = false },
+            )
         }
     }
 }

@@ -28,3 +28,10 @@ venv/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Web app (web/)
+node_modules/
+web/dist/
+web/public/dict/
+web/public/sounds/
+web/public/licenses/

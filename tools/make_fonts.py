@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
-"""Creates the bundled Inter font files in app/src/main/res/font/.
+"""Creates the bundled Inter font files in app/src/main/res/font/ (or, with --web,
+the single variable woff2 in web/public/fonts/).
 
 Takes the official Inter variable font (SIL Open Font License 1.1), pins the
 weights the Modrinth design system uses (400/500/600/700/800) and subsets each
 instance to Latin + Latin-1, which covers English and Brazilian Portuguese.
 Each file ends up around 60 KB instead of ~880 KB for the full variable font.
 
-Usage:  pip install fonttools
-        python tools/make_fonts.py [--source Inter.ttf]
+Usage:  pip install fonttools brotli
+        python tools/make_fonts.py [--source Inter.ttf] [--web]
 """
 
 from __future__ import annotations
@@ -22,6 +23,7 @@ from fontTools.varLib import instancer
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "app" / "src" / "main" / "res" / "font"
+WEB_OUT = ROOT / "web" / "public" / "fonts" / "inter-latin.woff2"
 SOURCE_URL = "https://raw.githubusercontent.com/google/fonts/main/ofl/inter/Inter%5Bopsz,wght%5D.ttf"
 
 WEIGHTS = {
@@ -44,6 +46,7 @@ UNICODES = (
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--source", type=Path, default=Path(__file__).resolve().parent / ".cache" / "Inter.ttf")
+    parser.add_argument("--web", action="store_true", help="only write the web font (weights 400-800 in one variable woff2)")
     args = parser.parse_args()
 
     if not args.source.exists():
@@ -57,6 +60,19 @@ def main() -> None:
     options.name_IDs = ["*"]
     options.notdef_outline = True
     options.hinting = False
+
+    if args.web:
+        # Subset before instancing: the instancer can leave lazy tables the subsetter trips over.
+        font = TTFont(args.source, lazy=False)
+        subsetter = subset.Subsetter(options)
+        subsetter.populate(unicodes=UNICODES)
+        subsetter.subset(font)
+        font = instancer.instantiateVariableFont(font, {"wght": (400, 800), "opsz": 14})
+        font.flavor = "woff2"
+        WEB_OUT.parent.mkdir(parents=True, exist_ok=True)
+        font.save(WEB_OUT)
+        print(f"{WEB_OUT.relative_to(ROOT)}: {WEB_OUT.stat().st_size // 1024} KB")
+        return
 
     for name, weight in WEIGHTS.items():
         font = TTFont(args.source)
