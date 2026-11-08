@@ -22,3 +22,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Wordlink"
 include(":app")
+include(":core")

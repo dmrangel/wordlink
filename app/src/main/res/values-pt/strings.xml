@@ -66,6 +66,16 @@
     <string name="haptics">Vibração</string>
     <string name="high_refresh">Taxa de atualização alta</string>
     <string name="high_refresh_desc">Usa o modo mais rápido da tela (90–144 Hz) para animações mais fluidas</string>
+    <string name="backup">Backup do progresso</string>
+    <string name="backup_desc">Um código com suas moedas, níveis e sequência. Cole em outro celular ou na versão web para continuar de lá.</string>
+    <string name="copy_code">Copiar código</string>
+    <string name="code_copied">Copiado</string>
+    <string name="restore">Restaurar</string>
+    <string name="restore_title">Restaurar progresso</string>
+    <string name="restore_desc">Cole um código de backup. Ele substitui as moedas, os níveis e a sequência deste aparelho.</string>
+    <string name="paste">Colar</string>
+    <string name="invalid_code">Esse código não é válido. Confira se ele foi copiado inteiro.</string>
+    <string name="restored">Progresso restaurado</string>
     <string name="about">Sobre</string>
     <string name="about_text">Livre e de código aberto. Sem anúncios, sem contas, sem rastreamento. O visual segue o design system do Modrinth App; o Wordlink não tem afiliação com o Modrinth.</string>
     <string name="credits">Listas de palavras: ENABLE, SCOWL, FrequencyWords, fserb/pt-br e VERO. Fonte: Inter. Ícones: Lucide.</string>

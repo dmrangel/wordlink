@@ -7,15 +7,20 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
+import io.github.dmrangel.wordlink.backup.BackupCode
 import io.github.dmrangel.wordlink.data.Backgrounds
 import io.github.dmrangel.wordlink.data.Profile
 import io.github.dmrangel.wordlink.data.Settings
 import io.github.dmrangel.wordlink.data.Store
+import io.github.dmrangel.wordlink.data.toBackup
+import io.github.dmrangel.wordlink.data.toProfile
 import io.github.dmrangel.wordlink.game.Dictionary
 import io.github.dmrangel.wordlink.game.GameSession
 import io.github.dmrangel.wordlink.game.Language
 import io.github.dmrangel.wordlink.game.LevelGenerator
 import io.github.dmrangel.wordlink.game.LevelId
+import io.github.dmrangel.wordlink.game.daily
+import io.github.dmrangel.wordlink.game.date
 import io.github.dmrangel.wordlink.ui.theme.Customization
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers
@@ -128,6 +133,18 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
             // Progress saved before a fix to the solved-check can already be complete.
             if (next.isSolved) listener.onSolved(next)
         }
+    }
+
+    /** A code holding the profile, to move progress to another device or the web app. */
+    fun backupCode(): String = BackupCode.encode(profile.toBackup())
+
+    /** Replaces the profile with the one in [code]; false if the code is not valid. */
+    fun restore(code: String): Boolean {
+        val backup = BackupCode.decode(code) ?: return false
+        updateProfile { backup.toProfile() }
+        session = null
+        completion = null
+        return true
     }
 
     fun dismissToast(id: Long) {

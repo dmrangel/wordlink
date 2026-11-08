@@ -67,6 +67,16 @@
     <string name="haptics">Vibration</string>
     <string name="high_refresh">High refresh rate</string>
     <string name="high_refresh_desc">Runs at your display\'s fastest mode (90–144 Hz) for smoother animation</string>
+    <string name="backup">Progress backup</string>
+    <string name="backup_desc">A code with your coins, levels and streak. Paste it on another phone or in the web version to carry on there.</string>
+    <string name="copy_code">Copy code</string>
+    <string name="code_copied">Copied</string>
+    <string name="restore">Restore</string>
+    <string name="restore_title">Restore progress</string>
+    <string name="restore_desc">Paste a backup code. It replaces the coins, levels and streak on this device.</string>
+    <string name="paste">Paste</string>
+    <string name="invalid_code">That code isn\'t valid. Check that it was copied completely.</string>
+    <string name="restored">Progress restored</string>
     <string name="about">About</string>
     <string name="about_text">Free and open source. No ads, no accounts, no tracking. The visual design follows the Modrinth App design system; Wordlink is not affiliated with Modrinth.</string>
     <string name="credits">Word lists: ENABLE, SCOWL, FrequencyWords, fserb/pt-br and VERO. Font: Inter. Icons: Lucide.</string>

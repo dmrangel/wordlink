@@ -1,6 +1,5 @@
 package io.github.dmrangel.wordlink.game
 
-import java.time.LocalDate
 import kotlin.random.Random
 
 data class Difficulty(
@@ -56,11 +55,12 @@ class LevelGenerator(val dictionary: Dictionary) {
         return generate(LevelId.Campaign(dictionary.language, number), difficulty, bucket, position, random)
     }
 
-    fun daily(date: LocalDate): Level {
+    /** The daily puzzle for a day counted since 1970-01-01 (LocalDate.toEpochDay()). */
+    fun daily(epochDay: Int): Level {
         val bucket = bucket(Difficulty.Daily.letters)
-        val random = Random(seed(1_000_000_000L + date.toEpochDay()))
+        val random = Random(seed(1_000_000_000L + epochDay))
         val position = random.nextInt(bucket.size)
-        return generate(LevelId.Daily(dictionary.language, date), Difficulty.Daily, bucket, position, random)
+        return generate(LevelId.Daily(dictionary.language, epochDay), Difficulty.Daily, bucket, position, random)
     }
 
     private fun generate(id: LevelId, difficulty: Difficulty, bucket: List<String>, position: Int, random: Random): Level {

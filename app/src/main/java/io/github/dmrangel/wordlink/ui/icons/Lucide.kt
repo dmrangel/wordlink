@@ -63,6 +63,17 @@ object Lucide {
         )
     }
 
+    val ClipboardPaste: ImageVector by lazy {
+        icon(
+            "ClipboardPaste",
+            "M 11 14 h 10",
+            "M 16 4 h 2 a 2 2 0 0 1 2 2 v 1.344",
+            "m 17 18 4 -4 -4 -4",
+            "M 8 4 H 6 a 2 2 0 0 0 -2 2 v 14 a 2 2 0 0 0 2 2 h 12 a 2 2 0 0 0 1.793 -1.113",
+            "M9 2h6a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-6a1 1 0 0 1 -1 -1v-2a1 1 0 0 1 1 -1z",
+        )
+    }
+
     val Coins: ImageVector by lazy {
         icon(
             "Coins",
@@ -70,6 +81,14 @@ object Lucide {
             "M 15 6 h 1 v 4",
             "m 6.134 14.768 .866 -.5 2 3.464",
             "M10 8a6 6 0 1 0 12 0a6 6 0 1 0 -12 0",
+        )
+    }
+
+    val Copy: ImageVector by lazy {
+        icon(
+            "Copy",
+            "M10 8h10a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2z",
+            "M 4 16 c -1.1 0 -2 -.9 -2 -2 V 4 c 0 -1.1 .9 -2 2 -2 h 10 c 1.1 0 2 .9 2 2",
         )
     }
 
@@ -195,6 +214,15 @@ object Lucide {
         )
     }
 
+    val Share: ImageVector by lazy {
+        icon(
+            "Share",
+            "M 12 2 v 13",
+            "m 16 6 -4 -4 -4 4",
+            "M 4 12 v 8 a 2 2 0 0 0 2 2 h 12 a 2 2 0 0 0 2 -2 v -8",
+        )
+    }
+
     val Shuffle: ImageVector by lazy {
         icon(
             "Shuffle",
@@ -220,6 +248,15 @@ object Lucide {
         icon(
             "Square",
             "M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2z",
+        )
+    }
+
+    val SquarePlus: ImageVector by lazy {
+        icon(
+            "SquarePlus",
+            "M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2z",
+            "M 8 12 h 8",
+            "M 12 8 v 8",
         )
     }
 
