@@ -14,7 +14,13 @@ kotlin {
         outputModuleName.set("wordlink-core")
         // Node runs the JS tests; the library itself has no Node dependencies
         // and is bundled for the browser by Vite.
-        nodejs()
+        nodejs {
+            testTask {
+                // The parity test generates ~140 levels; Mocha's 2 s default is too
+                // tight for that on shared CI runners.
+                useMocha { timeout = "60s" }
+            }
+        }
         useEsModules()
         binaries.library()
         generateTypeScriptDefinitions()
