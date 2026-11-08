@@ -1,0 +1,30 @@
+# Gradle
+.gradle/
+build/
+.kotlin/
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+captures/
+.externalNativeBuild/
+.cxx/
+.navigation/
+
+# Local machine configuration (SDK path, signing secrets)
+local.properties
+keystore.properties
+*.jks
+*.keystore
+
+# Python tooling (tools/*.py) and its download cache
+tools/.cache/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini

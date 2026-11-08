@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lint>
+    <!-- Adaptive icons must stay in mipmap-anydpi-v26 for aapt2 to pick them up. -->
+    <issue id="ObsoleteSdkInt">
+        <ignore path="src/main/res/mipmap-anydpi-v26" />
+    </issue>
+    <!-- Only used on API 26-27 to rotate imported photos; not worth a dependency. -->
+    <issue id="ExifInterface">
+        <ignore path="src/main/java/io/github/dmrangel/wordlink/data/Backgrounds.kt" />
+    </issue>
+    <!-- "A newer version is available" depends on the day lint runs, not on the code. -->
+    <issue id="AndroidGradlePluginVersion" severity="informational" />
+    <issue id="GradleDependency" severity="informational" />
+    <issue id="NewerVersionAvailable" severity="informational" />
+    <!-- targetSdk follows the newest API level the app has been tested on. -->
+    <issue id="OldTargetApi" severity="informational" />
+</lint>

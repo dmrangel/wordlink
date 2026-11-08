@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Themed-icon version: just the linked letters, tinted by the launcher. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:pathData="M37.2,43.2L45.6,66L54,49.2L62.4,66L70.8,43.2"
+        android:strokeWidth="5"
+        android:strokeColor="#FFFFFF"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M32.2,43.2a5,5 0,1 0,10 0a5,5 0,1 0,-10 0ZM40.6,66a5,5 0,1 0,10 0a5,5 0,1 0,-10 0ZM49,49.2a5,5 0,1 0,10 0a5,5 0,1 0,-10 0ZM57.4,66a5,5 0,1 0,10 0a5,5 0,1 0,-10 0ZM65.8,43.2a5,5 0,1 0,10 0a5,5 0,1 0,-10 0Z" />
+</vector>

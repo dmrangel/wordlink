@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name" translatable="false">Wordlink</string>
+
+    <string name="play">Play</string>
+    <string name="level_n">Level %1$d</string>
+    <string name="level_caption">Level</string>
+    <plurals name="next_milestone">
+        <item quantity="one">%d level to the next milestone</item>
+        <item quantity="other">%d levels to the next milestone</item>
+    </plurals>
+    <string name="language">Language</string>
+    <string name="daily_puzzle">Daily puzzle</string>
+    <string name="daily_new">A fresh 7-letter puzzle every day</string>
+    <string name="daily_solved">Solved today, come back tomorrow</string>
+    <string name="stats">Stats</string>
+    <string name="stat_levels">Levels</string>
+    <string name="stat_words">Words</string>
+    <string name="stat_bonus">Bonus</string>
+    <string name="stat_streak">Streak</string>
+    <string name="loading">Loading…</string>
+
+    <string name="settings">Settings</string>
+    <string name="appearance">Appearance</string>
+    <string name="theme">Theme</string>
+    <string name="theme_dark">Dark</string>
+    <string name="theme_oled">OLED</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_system">System</string>
+    <string name="theme_custom">Custom</string>
+    <string name="interface_language_desc">Also changes the language of the whole app</string>
+    <string name="customization">Customization</string>
+    <string name="preview">Preview</string>
+    <string name="accent_color">Accent color</string>
+    <string name="accent_default">Theme default</string>
+    <string name="custom_color">Custom color</string>
+    <string name="pick_color">Pick a color</string>
+    <string name="hue">Hue</string>
+    <string name="saturation">Saturation</string>
+    <string name="brightness">Brightness</string>
+    <string name="apply">Apply</string>
+    <string name="cancel">Cancel</string>
+    <string name="background_photo">Background photo</string>
+    <string name="background_photo_desc">Shown behind every screen. Nothing leaves your phone.</string>
+    <string name="choose_photo">Choose photo</string>
+    <string name="change_photo">Change</string>
+    <string name="remove">Remove</string>
+    <string name="blur">Blur</string>
+    <string name="dim">Dim</string>
+    <string name="panel_opacity">Panel opacity</string>
+    <string name="custom_theme">Custom theme</string>
+    <string name="custom_theme_desc">Pick a base color; surfaces, borders and text are derived from it, light or dark.</string>
+    <string name="base_color">Base color</string>
+    <string name="board">Board</string>
+    <string name="tile_shape">Tile shape</string>
+    <string name="shape_square">Square</string>
+    <string name="shape_rounded">Rounded</string>
+    <string name="shape_circle">Circle</string>
+    <string name="wheel_size">Letter wheel size</string>
+    <string name="left_handed">Left-handed layout</string>
+    <string name="left_handed_desc">Puts hint and target on the left side of the wheel</string>
+    <string name="reduce_motion">Reduce motion</string>
+    <string name="reduce_motion_desc">Turns off confetti, shakes and letter pop-ins</string>
+    <string name="reset_customization">Reset customization</string>
+    <string name="gameplay">Gameplay</string>
+    <string name="sound">Sound effects</string>
+    <string name="haptics">Vibration</string>
+    <string name="high_refresh">High refresh rate</string>
+    <string name="high_refresh_desc">Runs at your display\'s fastest mode (90–144 Hz) for smoother animation</string>
+    <string name="about">About</string>
+    <string name="about_text">Free and open source. No ads, no accounts, no tracking. The visual design follows the Modrinth App design system; Wordlink is not affiliated with Modrinth.</string>
+    <string name="credits">Word lists: ENABLE, SCOWL, FrequencyWords, fserb/pt-br and VERO. Font: Inter. Icons: Lucide.</string>
+    <string name="version">Version %1$s</string>
+
+    <string name="daily_title">Daily · %1$s</string>
+    <string name="shuffle">Shuffle</string>
+    <string name="hint">Hint</string>
+    <string name="target">Target</string>
+    <string name="bonus">Bonus</string>
+    <string name="target_prompt">Tap a square to reveal it</string>
+    <string name="not_enough_coins">Not enough coins</string>
+    <string name="jar_reward" tools:ignore="PluralsCandidate">Bonus jar full! +%1$d coins</string>
+    <string name="bonus_title">Bonus words</string>
+    <string name="bonus_rule_pt">Portuguese mode only counts singular words and verbs in the infinitive.</string>
+    <string name="bonus_empty">Find real words that aren\'t in the grid to fill the jar.</string>
+    <string name="jar_progress" tools:ignore="PluralsCandidate">%1$d of %2$d for +%3$d coins</string>
+    <string name="close">Close</string>
+
+    <string name="level_complete">Level complete!</string>
+    <string name="daily_complete">Daily puzzle solved!</string>
+    <string name="next_level">Next level</string>
+    <string name="home">Home</string>
+    <plurals name="words_found">
+        <item quantity="one">%d word</item>
+        <item quantity="other">%d words</item>
+    </plurals>
+    <plurals name="bonus_found">
+        <item quantity="one">%d bonus word</item>
+        <item quantity="other">%d bonus words</item>
+    </plurals>
+    <plurals name="days">
+        <item quantity="one">%d day</item>
+        <item quantity="other">%d days</item>
+    </plurals>
+</resources>

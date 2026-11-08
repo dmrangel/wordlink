@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Brand-green tile with a "W" traced through five linked letters, inside the 66dp safe zone. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:fillColor="#1BD96A"
+        android:pathData="M42.6,28H65.4A14.6,14.6 0,0 1,80 42.6V65.4A14.6,14.6 0,0 1,65.4 80H42.6A14.6,14.6 0,0 1,28 65.4V42.6A14.6,14.6 0,0 1,42.6 28Z" />
+    <path
+        android:pathData="M39.44,44.64L46.72,64.4L54,49.84L61.28,64.4L68.56,44.64"
+        android:strokeWidth="3.9"
+        android:strokeColor="#000000"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+    <path
+        android:fillColor="#000000"
+        android:pathData="M35.54,44.64a3.9,3.9 0,1 0,7.8 0a3.9,3.9 0,1 0,-7.8 0ZM42.82,64.4a3.9,3.9 0,1 0,7.8 0a3.9,3.9 0,1 0,-7.8 0ZM50.1,49.84a3.9,3.9 0,1 0,7.8 0a3.9,3.9 0,1 0,-7.8 0ZM57.38,64.4a3.9,3.9 0,1 0,7.8 0a3.9,3.9 0,1 0,-7.8 0ZM64.66,44.64a3.9,3.9 0,1 0,7.8 0a3.9,3.9 0,1 0,-7.8 0Z" />
+</vector>

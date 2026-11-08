@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Only paints the window until Compose draws; the UI theme lives in Theme.kt. -->
+    <style name="Theme.Wordlink" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/frame</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+</resources>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="play">Jogar</string>
+    <string name="level_n">Nível %1$d</string>
+    <string name="level_caption">Nível</string>
+    <plurals name="next_milestone">
+        <item quantity="one">Falta %d nível para o próximo marco</item>
+        <item quantity="many">Faltam %d níveis para o próximo marco</item>
+        <item quantity="other">Faltam %d níveis para o próximo marco</item>
+    </plurals>
+    <string name="language">Idioma</string>
+    <string name="daily_puzzle">Desafio diário</string>
+    <string name="daily_new">Um diagrama novo de 7 letras todo dia</string>
+    <string name="daily_solved">Resolvido hoje, volte amanhã</string>
+    <string name="stats">Estatísticas</string>
+    <string name="stat_levels">Níveis</string>
+    <string name="stat_words">Palavras</string>
+    <string name="stat_bonus">Bônus</string>
+    <string name="stat_streak">Sequência</string>
+    <string name="loading">Carregando…</string>
+
+    <string name="settings">Configurações</string>
+    <string name="appearance">Aparência</string>
+    <string name="theme">Tema</string>
+    <string name="theme_dark">Escuro</string>
+    <string name="theme_oled">OLED</string>
+    <string name="theme_light">Claro</string>
+    <string name="theme_system">Sistema</string>
+    <string name="theme_custom">Personalizado</string>
+    <string name="interface_language_desc">Também muda o idioma de todo o app</string>
+    <string name="customization">Personalização</string>
+    <string name="preview">Prévia</string>
+    <string name="accent_color">Cor de destaque</string>
+    <string name="accent_default">Padrão do tema</string>
+    <string name="custom_color">Cor personalizada</string>
+    <string name="pick_color">Escolha uma cor</string>
+    <string name="hue">Matiz</string>
+    <string name="saturation">Saturação</string>
+    <string name="brightness">Brilho</string>
+    <string name="apply">Aplicar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="background_photo">Foto de fundo</string>
+    <string name="background_photo_desc">Aparece atrás de todas as telas. Nada sai do seu celular.</string>
+    <string name="choose_photo">Escolher foto</string>
+    <string name="change_photo">Trocar</string>
+    <string name="remove">Remover</string>
+    <string name="blur">Desfoque</string>
+    <string name="dim">Escurecer</string>
+    <string name="panel_opacity">Opacidade dos painéis</string>
+    <string name="custom_theme">Tema personalizado</string>
+    <string name="custom_theme_desc">Escolha uma cor base; superfícies, bordas e textos são derivados dela, claros ou escuros.</string>
+    <string name="base_color">Cor base</string>
+    <string name="board">Tabuleiro</string>
+    <string name="tile_shape">Formato dos quadrados</string>
+    <string name="shape_square">Quadrado</string>
+    <string name="shape_rounded">Arredondado</string>
+    <string name="shape_circle">Círculo</string>
+    <string name="wheel_size">Tamanho da roda de letras</string>
+    <string name="left_handed">Modo canhoto</string>
+    <string name="left_handed_desc">Leva a dica e o alvo para o lado esquerdo da roda</string>
+    <string name="reduce_motion">Reduzir animações</string>
+    <string name="reduce_motion_desc">Desliga confetes, tremidas e a entrada animada das letras</string>
+    <string name="reset_customization">Restaurar personalização</string>
+    <string name="gameplay">Jogo</string>
+    <string name="sound">Efeitos sonoros</string>
+    <string name="haptics">Vibração</string>
+    <string name="high_refresh">Taxa de atualização alta</string>
+    <string name="high_refresh_desc">Usa o modo mais rápido da tela (90–144 Hz) para animações mais fluidas</string>
+    <string name="about">Sobre</string>
+    <string name="about_text">Livre e de código aberto. Sem anúncios, sem contas, sem rastreamento. O visual segue o design system do Modrinth App; o Wordlink não tem afiliação com o Modrinth.</string>
+    <string name="credits">Listas de palavras: ENABLE, SCOWL, FrequencyWords, fserb/pt-br e VERO. Fonte: Inter. Ícones: Lucide.</string>
+    <string name="version">Versão %1$s</string>
+
+    <string name="daily_title">Diário · %1$s</string>
+    <string name="shuffle">Embaralhar</string>
+    <string name="hint">Dica</string>
+    <string name="target">Alvo</string>
+    <string name="bonus">Bônus</string>
+    <string name="target_prompt">Toque num quadrado para revelá-lo</string>
+    <string name="not_enough_coins">Moedas insuficientes</string>
+    <string name="jar_reward" tools:ignore="PluralsCandidate">Pote de bônus cheio! +%1$d moedas</string>
+    <string name="bonus_title">Palavras bônus</string>
+    <string name="bonus_rule_pt">No português valem só palavras no singular e verbos no infinitivo (sem plurais nem conjugações).</string>
+    <string name="bonus_empty">Encontre palavras reais que não estão no diagrama para encher o pote.</string>
+    <string name="jar_progress" tools:ignore="PluralsCandidate">%1$d de %2$d para +%3$d moedas</string>
+    <string name="close">Fechar</string>
+
+    <string name="level_complete">Nível concluído!</string>
+    <string name="daily_complete">Desafio diário resolvido!</string>
+    <string name="next_level">Próximo nível</string>
+    <string name="home">Início</string>
+    <plurals name="words_found">
+        <item quantity="one">%d palavra</item>
+        <item quantity="many">%d palavras</item>
+        <item quantity="other">%d palavras</item>
+    </plurals>
+    <plurals name="bonus_found">
+        <item quantity="one">%d palavra bônus</item>
+        <item quantity="many">%d palavras bônus</item>
+        <item quantity="other">%d palavras bônus</item>
+    </plurals>
+    <plurals name="days">
+        <item quantity="one">%d dia</item>
+        <item quantity="many">%d dias</item>
+        <item quantity="other">%d dias</item>
+    </plurals>
+</resources>

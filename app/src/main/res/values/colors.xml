@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Modrinth dark theme: surface-3 (frame) and surface-1 (background). -->
+    <color name="frame">#FF27292E</color>
+    <color name="ic_launcher_background">#FF16181C</color>
+</resources>
