@@ -33,3 +33,5 @@ desktop.ini
 node_modules/
 web/dist/
 web/public/dict/
+web/public/sounds/
+web/public/licenses/

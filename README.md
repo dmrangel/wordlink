@@ -73,6 +73,22 @@ com o visual do **design system do Modrinth App**. Dois modos: **inglês** e
 
 Requer Android 8.0 (API 26) ou mais novo.
 
+### iPhone e navegador (PWA)
+
+A pasta `web/` tem a mesma versão como app web instalável, publicada no GitHub
+Pages a cada push no `main`. No iPhone: abra o endereço no Safari, toque em
+**Compartilhar → Adicionar à Tela de Início**. Instalado assim ele abre em tela
+cheia, funciona offline e fica livre da limpeza do Safari, que apaga os dados de
+sites não abertos por 7 dias.
+
+- Usa o **mesmo motor** do Android (módulo `:core`, Kotlin compilado para JS): o
+  nível 57 é o mesmo diagrama nas duas plataformas.
+- **Backup do progresso**: em Configurações, "Copiar código" gera um texto
+  (`WL1-…`) com moedas, níveis e sequência; "Restaurar" em outro aparelho, seja
+  Android ou web, continua de onde parou.
+- Limitações do iOS: o Safari não tem API de vibração e o progresso fica só no
+  aparelho (use o código de backup para levá-lo).
+
 ## Compilar
 
 Requisitos: JDK 17+ (testado com 21) e Android SDK com a plataforma 37.2
@@ -91,6 +107,21 @@ Sem Android Studio, crie um `local.properties` apontando para o SDK
 ```properties
 sdk.dir=C\:/Users/voce/AppData/Local/Android/Sdk
 ```
+
+### Web
+
+Requisitos: Node 22+ e o JDK (para compilar o motor Kotlin para JS).
+
+```bash
+cd web
+npm ci
+npm run core      # compila :core para JS (Gradle)
+npm run dev       # servidor de desenvolvimento
+npm run build     # web/dist, com service worker para jogar offline
+```
+
+Dicionários e sons são copiados de `app/src/main` na hora do build, então
+continuam com uma única cópia no repositório.
 
 ### Testes e capturas de tela
 
@@ -197,8 +228,12 @@ o Wordlink não tem afiliação com o Modrinth.
 ## Estrutura
 
 ```
+core/src/commonMain/   Motor compartilhado (Kotlin Multiplatform: JVM para o Android, JS para a web)
+├── game/        Dicionário, gerador de palavras cruzadas e níveis
+└── backup/      Código de backup do progresso (WL1-…)
+web/src/         App web: estado, telas, roda de letras, temas e service worker (TypeScript)
 app/src/main/java/io/github/dmrangel/wordlink/
-├── game/        Dicionário, gerador de palavras cruzadas, níveis e estado da partida (Kotlin puro)
+├── game/        Estado da partida
 ├── data/        Persistência (SharedPreferences)
 ├── ui/          ViewModel, efeitos (som/vibração) e telas
 │   ├── theme/       Tokens do design system
@@ -215,9 +250,11 @@ docs/            Capturas de tela
 
 ```bash
 python tools/build_dictionaries.py   # app/src/main/assets/dict/{en,pt}.txt
-pip install fonttools && python tools/make_fonts.py
+pip install fonttools brotli && python tools/make_fonts.py
+python tools/make_fonts.py --web     # web/public/fonts/inter-latin.woff2
 python tools/make_sounds.py          # app/src/main/res/raw/*.wav
-python tools/gen_icons.py            # ui/icons/Lucide.kt
+python tools/gen_icons.py            # ui/icons/Lucide.kt e web/src/icons.ts
+python tools/gen_web_icons.py        # ícones do PWA em web/public/icons/
 ```
 
 ## Licença
